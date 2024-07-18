@@ -27,4 +27,9 @@
         <property name="name" value="Thomas"/>
      </bean>
 
+
+
+    <!-- Test Bean Scope: Singleton(the default) and Prototype   -->
+    <bean id="singletonPig" class="com.lordbao.beans.Pig"/>
+    <bean id="prototypePig" class="com.lordbao.beans.Pig" scope="prototype"/>
 </beans>

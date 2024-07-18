@@ -2,6 +2,7 @@ package com.lordbao.test;
 
 import com.lordbao.beans.Person;
 import com.lordbao.beans.Pig;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
@@ -27,5 +28,18 @@ public class TestSpring {
         System.out.println(person1);
         Person person2 = context.getBean("person2", Person.class);
         System.out.println(person2);
+    }
+
+
+    @Test
+    public  void testBeanScope(){
+        ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("mybean.xml");
+        Pig singletonPig1 = context.getBean("singletonPig", Pig.class);
+        Pig singletonPig2= context.getBean("singletonPig", Pig.class);
+        Assertions.assertSame(singletonPig1, singletonPig2);
+
+        Pig prototypePig1 = context.getBean("prototypePig", Pig.class);
+        Pig prototypePig2 = context.getBean("prototypePig", Pig.class);
+        Assertions.assertNotSame(prototypePig1, prototypePig2);
     }
 }
