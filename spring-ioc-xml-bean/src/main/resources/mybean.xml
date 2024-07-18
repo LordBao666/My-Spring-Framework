@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <!-- bean created by non-arg constructor -->
+    <bean id="pig1" class="com.lordbao.beans.Pig"/>
+
+    <!-- bean created by static factory    -->
+    <bean id="pig2" class="com.lordbao.beans.PigStaticFactory" factory-method="getInstance"/>
+
+    <!-- bean created by instance factory    -->
+    <bean id="pigInstanceFactory" class="com.lordbao.beans.PigInstanceFactory"/>
+    <bean id="pig3" factory-bean="pigInstanceFactory" factory-method="getInstance"/>
+
+
+    <!-- constructor injection   -->
+    <bean id="person1" class="com.lordbao.beans.Person">
+        <constructor-arg  name="age" value="12"/>
+        <constructor-arg  name="name" value="jack" />
+        <constructor-arg  name="pig" ref="pig1"/>
+    </bean>
+
+   <!-- setter injection   -->
+    <bean id="person2" class="com.lordbao.beans.Person">
+        <property name="age" value="11"/>
+        <property name="pig" ref="pig2"/>
+        <property name="name" value="Thomas"/>
+     </bean>
+
+</beans>
