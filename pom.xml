@@ -13,6 +13,7 @@
         <module>spring-ioc-xml-practice</module>
         <module>spring-ioc-annotation-bean</module>
         <module>spring-ioc-annotation-practice</module>
+        <module>spring-ioc-java-bean</module>
     </modules>
 
     <properties>
