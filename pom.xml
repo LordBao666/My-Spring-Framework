@@ -11,6 +11,7 @@
     <modules>
         <module>spring-ioc-xml-bean</module>
         <module>spring-ioc-xml-practice</module>
+        <module>spring-ioc-annotation-bean</module>
     </modules>
 
     <properties>
@@ -53,6 +54,13 @@
                 <groupId>org.springframework</groupId>
                 <artifactId>spring-jdbc</artifactId>
                 <version>6.1.11</version>
+            </dependency>
+
+            <!--When using @Resource Annotation, import package below-->
+            <dependency>
+                <groupId>jakarta.annotation</groupId>
+                <artifactId>jakarta.annotation-api</artifactId>
+                <version>2.1.1</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
