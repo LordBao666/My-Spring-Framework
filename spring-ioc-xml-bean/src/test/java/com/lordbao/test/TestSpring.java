@@ -42,4 +42,12 @@ public class TestSpring {
         Pig prototypePig2 = context.getBean("prototypePig", Pig.class);
         Assertions.assertNotSame(prototypePig1, prototypePig2);
     }
+
+
+    @Test
+    public void testFactoryBean(){
+        ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("mybean.xml");
+        Pig pig = context.getBean("pigbean", Pig.class);
+        System.out.println(pig);
+    }
 }

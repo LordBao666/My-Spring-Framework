@@ -32,4 +32,9 @@
     <!-- Test Bean Scope: Singleton(the default) and Prototype   -->
     <bean id="singletonPig" class="com.lordbao.beans.Pig"/>
     <bean id="prototypePig" class="com.lordbao.beans.Pig" scope="prototype"/>
+
+
+
+    <!-- Test FactoryBean interface   -->
+    <bean id="pigbean" class="com.lordbao.beans.PigFactoryBeanFactory"/>
 </beans>
