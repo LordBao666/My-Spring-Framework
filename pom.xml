@@ -21,6 +21,8 @@
         <maven.compiler.source>21</maven.compiler.source>
         <maven.compiler.target>21</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+
+        <spring.version>6.1.11</spring.version>
     </properties>
 
     <dependencyManagement>
@@ -30,15 +32,16 @@
             <dependency>
                 <groupId>org.springframework</groupId>
                 <artifactId>spring-context</artifactId>
-                <version>6.1.11</version>
+                <version>${spring.version}</version>
             </dependency>
             <!--junit5测试-->
             <dependency>
                 <groupId>org.junit.jupiter</groupId>
                 <artifactId>junit-jupiter-api</artifactId>
-                <version>5.3.1</version>
+                <version>5.10.2</version>
                 <scope>test</scope>
             </dependency>
+
             <!-- mysql-connector           -->
             <dependency>
                 <groupId>com.mysql</groupId>
@@ -57,7 +60,15 @@
             <dependency>
                 <groupId>org.springframework</groupId>
                 <artifactId>spring-jdbc</artifactId>
-                <version>6.1.11</version>
+                <version>${spring.version}</version>
+            </dependency>
+
+            <!-- spring-test-->
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-test</artifactId>
+                <version>${spring.version}</version>
+                <scope>test</scope>
             </dependency>
 
             <!--When using @Resource Annotation, import package below-->
