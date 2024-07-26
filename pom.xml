@@ -14,6 +14,7 @@
         <module>spring-ioc-annotation-bean</module>
         <module>spring-ioc-annotation-practice</module>
         <module>spring-ioc-java-bean</module>
+        <module>spring-ioc-java-practice</module>
     </modules>
 
     <properties>
@@ -36,6 +37,7 @@
                 <groupId>org.junit.jupiter</groupId>
                 <artifactId>junit-jupiter-api</artifactId>
                 <version>5.3.1</version>
+                <scope>test</scope>
             </dependency>
             <!-- mysql-connector           -->
             <dependency>
