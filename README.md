@@ -22,3 +22,4 @@ IOC部分
 
 AOP部分
 - spring-aop-annotation-quickstart
+- spring-aop-annotation-course

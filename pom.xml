@@ -16,6 +16,7 @@
         <module>spring-ioc-java-bean</module>
         <module>spring-ioc-java-practice</module>
         <module>spring-aop-annotation-quickstart</module>
+        <module>spring-aop-annotation-course</module>
     </modules>
 
     <properties>
