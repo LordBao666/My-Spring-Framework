@@ -15,6 +15,7 @@
         <module>spring-ioc-annotation-practice</module>
         <module>spring-ioc-java-bean</module>
         <module>spring-ioc-java-practice</module>
+        <module>spring-aop-annotation-quickstart</module>
     </modules>
 
     <properties>
@@ -69,6 +70,12 @@
                 <artifactId>spring-test</artifactId>
                 <version>${spring.version}</version>
                 <scope>test</scope>
+            </dependency>
+            <!-- spring-aspects-->
+            <dependency>
+                <groupId>org.springframework </groupId>
+                <artifactId>spring-aspects </artifactId>
+                <version>${spring.version} </version>
             </dependency>
 
             <!--When using @Resource Annotation, import package below-->
