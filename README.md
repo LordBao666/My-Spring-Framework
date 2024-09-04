@@ -3,7 +3,8 @@
 配套的[文档学习资料](https://www.wolai.com/oacbJpH1wPzGNoMAVnoELR).
 
 Spring框架的[官方文档链接](https://spring.io/projects/spring-framework#learn).
-
+<br>
+<br>
 
 # 学习思路
 **先看尚硅谷提供的文档, 再看尚硅谷的视频**. 
@@ -13,6 +14,8 @@ Spring框架的[官方文档链接](https://spring.io/projects/spring-framework#
 以后的开发模式主要基于注解，而非XML配置。因此总结着重强调注解方式。
 
 Spring的核心关键词是 IoC，DI，AOP。
+<br>
+<br>
 
 # 学习总结
 
@@ -106,7 +109,7 @@ public class SpringConfig {
 
 <span style="color:#EF43AA">为什么这里一直在强调组件的命名？这是因为自动注入可能产生冲突，就需要组件名称来指定注入某个组件</span>。
 
-
+<br>
 
 ## DI 是 IoC 体现
 
@@ -145,7 +148,7 @@ public class SoldierController {
 
 
 
-**set注入 **
+**set注入**
 
 ```java
 @Controller
@@ -269,6 +272,7 @@ public class SpringConfig {
 **注释**：上述`public JdbcTemplate jdbcTemplate(DataSource dataSource)`这里也是自动注入的DataSource。此时也可能出现命名冲突，解决方法可以有2个：1  将形参名修改为待注入组件的名字，2 采用`@Qualifier`进行指定。
 
 
+<br>
 
 ## AOP 抽离出非核心业务
 
@@ -319,12 +323,13 @@ AOP(面向切面编程)是将业务分为了核心业务和非核心业务两个
 实际开发时，如果有多个切面嵌套的情况，要慎重考虑。例如：如果事务切面优先级高，那么在缓存中命中数据的情况下，事务切面的操作都浪费了。
 
 
+<br>
 
 ## Spring声明式事务
 
 尚硅谷还讲述了**事务管理部分**，这部分实际上是Spring对事务的进一步简化：首先编程式事务很麻烦，其次我们或许可以采用AOP完成事务管理，但这样也麻烦，那么不如对事务的逻辑进一步简化，最后的简化结果是仅仅在你的方法上添加一个`@Transactional`注解就可以完成事务管理。
 
-
+<br>
 
 ## 补充说明
 
@@ -346,7 +351,8 @@ AOP(面向切面编程)是将业务分为了核心业务和非核心业务两个
 
 一些bug可能是逻辑上出了问题，比如你写了一个接口`UserService`，又写了一个实现类`UserServiceImpl`，并且针对该`UserServiceImpl`实现了增强。但是你在`UserController`中自动注入的是`UserServiceImpl`，这个时候就会出bug。原因是，JDK动态代理会针对你的`UserServiceImpl`生成一个`UserService`的子对象，所以实际上你注入`UserServiceImpl`并不会达到想要的效果。
 
-
+<br>
+<br>
 
 # 模块对应学习顺序
 
