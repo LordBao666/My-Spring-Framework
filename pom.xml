@@ -9,11 +9,6 @@
     <version>1.0-SNAPSHOT</version>
     <packaging>pom</packaging>
     <modules>
-        <module>spring-ioc-xml-bean</module>
-        <module>spring-ioc-xml-practice</module>
-        <module>spring-ioc-annotation-bean</module>
-        <module>spring-ioc-annotation-practice</module>
-        <module>spring-ioc-java-bean</module>
         <module>spring-ioc-java-practice</module>
         <module>spring-aop-annotation-quickstart</module>
         <module>spring-aop-annotation-course</module>
