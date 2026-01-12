@@ -1,6 +1,6 @@
 package com.lordbao;
 
-import com.lordbao.config.SpringConfig;
+import com.lordbao.config.JDBCConfig;
 import com.lordbao.controller.StudentController;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,25 +13,23 @@ import org.springframework.test.context.junit.jupiter.SpringJUnitConfig;
  * @Version 1.0
  */
 
-@SpringJUnitConfig(value = {SpringConfig.class})
+@SpringJUnitConfig(value = {JDBCConfig.class})
 public class SpringTest {
     @Autowired
     private StudentController studentController;
 
+
+    //test1是可以直接注入studentController 来进行测试
     @Test
-    public void test(){
-        AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(SpringConfig.class);
-//        StudentController studentController = context.getBean("studentController", StudentController.class);
-        StudentController studentController = context.getBean(StudentController.class);
+    public void test1() {
         studentController.findAll();
     }
 
-    //Import spring-test package first, so you can use  @Annotation SpringJunitConfig.
-    //The  SpringJunitConfig provides a spring environment for you to test, so you can
-    //eliminate redundant code to create the ioc-container. See the difference between
-    //test and test2.
+    //下面这种测试显然没有上面这种测试好...
     @Test
-    public void test2(){
+    public void test2() {
+        AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(JDBCConfig.class);
+        StudentController studentController = context.getBean(StudentController.class);
         studentController.findAll();
     }
 }

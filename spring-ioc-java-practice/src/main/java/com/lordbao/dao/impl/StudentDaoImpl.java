@@ -27,7 +27,7 @@ public class StudentDaoImpl implements StudentDao {
 
     @Override
     public List<Student> queryAll() {
-        String sql = "select id,name,gender,age,class classes from students";
+        String sql = "select id,name,gender,age,class clazz from students";
         List<Student> list = jdbcTemplate.query(sql, new BeanPropertyRowMapper<>(Student.class));
         return list;
     }

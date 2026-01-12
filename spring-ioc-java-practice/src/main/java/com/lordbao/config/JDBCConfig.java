@@ -18,7 +18,7 @@ import javax.sql.DataSource;
 @Configuration
 @ComponentScan("com.lordbao")
 @PropertySource("classpath:jdbc.properties")
-public class SpringConfig {
+public class JDBCConfig {
 
 
     @Bean
